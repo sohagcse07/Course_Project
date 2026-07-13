@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_crm_lead_form_mindsynth" model="ir.ui.view">
+        <field name="name">crm.lead.form.mindsynth</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+
+        <field name="arch" type="xml">
+            <button name="action_set_won_rainbowman" position="attributes">
+                <attribute name="string">Mark as Won</attribute>
+            </button>
+            <field name="user_id" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">0</attribute>
+            </field>
+
+          
+<!-- 
+            <field name="expected_revenue" position="after">
+                <field name="confirmed_revenue"/>
+            </field>
+           -->
+
+            <!-- <xpath expr="//group[@name='opportunity_partner']//field[@name='phone']" position="after">
+                <field name="confirmed_revenue" invisible="type == 'opportunity'"/>
+            </xpath> -->
+
+
+
+
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="referral_partner_id"
+                       options="{'no_create': True, 'no_open': True}"/>
+            </xpath>
+
+
+            <xpath expr="//group[@name='opportunity_partner']//field[@name='phone']/.." position="after">
+                <field name="confirmed_revenue" invisible="type == 'lead'"/>
+            </xpath>
+
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="internal_remarks"/>
+            </xpath>
+
+          
+
+
+            
+        </field>
+    </record>
+
+
+</odoo>
