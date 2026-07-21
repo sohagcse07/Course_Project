@@ -1,0 +1,16 @@
+<odoo>
+
+
+    <record id="action_expense_custom_report" model = "ir.actions.report">
+
+        <field name="name">Expense Custom Report</field>
+        <field name="model">hr.expense</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">expense_report.expense_custom_reportt</field>
+        <field name="report_file">expense_report.expense_custom_reportt</field>
+        <field name="binding_model_id" ref="hr_expense.model_hr_expense"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+</odoo>
